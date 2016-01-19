@@ -60,13 +60,13 @@ All files classified as verification tests will be removed from a project prepar
 To define verification tests, you need to set two configuration properties in `devskiller.json` project descriptor:
 
 - `testNamePatterns` - an array of RegEx patterns which should match all test names of verification tests. 
-Test name contains: `[namespace_name]\[Class_name].[method_name]`. In our sample project all verification tests are in `verify_pack` namespace, so following pattern will be sufficient:
+Test name contains: `[Class_name].[method_name]`. In our sample project all verification tests are in `VerificationCalculatorTest` class, so following pattern will be sufficient:
 
 ```json
 "testNamePatterns" : [ "Verification.*" ]
 ```
 
-- `pathPatterns` - an array of GLOB patterns which should match all files containing verification tests. All files that match defined patterns will be deleted from candidates' projects and will be added to the projects during the verification phase. These files will not be visible for candidate during the test.
+- `pathPatterns` - an array of GLOB patterns which should match all files containing verification tests. All files that match defined patterns will be deleted from candidates' projects and will be added to the projects during the verification phase. These files will not be visible for candidate during the test. In our sample project all files with verification tests are placed in `tests/` directory and have `"Verification"` prefix, so following pattern will be sufficient:
 
 ```json
 "pathPatterns" : [ "test/Verification**" ]
