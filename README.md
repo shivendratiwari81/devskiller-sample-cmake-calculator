@@ -20,7 +20,7 @@ Any **CMake** project might be used as a programming task. We support **Google T
 Your project will be executed with following command:
 
 ```sh
-cmake . && make clean && make && make test
+cmake . && make clean && make && ctest --force-new-ctest-process
 ```
 
 ## Automatic assessment
